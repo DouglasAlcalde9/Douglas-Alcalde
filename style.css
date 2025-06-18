@@ -83,12 +83,12 @@ body {
 }
 
 h1{
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     color: var(--primaria);
     margin: 20px;
 }
 .cabecalho-sub-titulo{
-font-size: 1.5rem;
+font-size: 1.2rem;
 color: var(--claro);
 }
 
