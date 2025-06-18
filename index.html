@@ -39,40 +39,69 @@
         <div class="projetos-caixa">
 
             <div class="projetos-card">
-                <img src="imagens/projeto1.png" alt="carro">
-                <h3 class="info-projetos">Loja de Carros</h3>
-                <p class="paragafo-projetos">Loja virtual moderna com animações suaves e design responsivo para uma loja
-                    de carros de luxo</p>
+                <img src="imagens/projeto1.png" alt="carro" class="projetos-imagens">
+
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Loja de Carros</h3>
+                    <p class="paragafo-projetos">Loja virtual moderna com animações suaves e design responsivo para uma
+                        loja
+                        de carros de luxo</p>
+                </div>
             </div>
 
             <div class="projetos-card">
-                <img src="imagens/projeto2.png" alt="ponto turistico em paris">
-                <h3 class="info-projetos">Página de viagens</h3>
-                <p class="paragafo-projetos">Uma página interativa com roteiros de viagens mais cobiçados do mundo.</p>
+                <img src="imagens/projeto2.png" alt="ponto turistico em paris" class="projetos-imagens">
+
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Página de viagens</h3>
+                    <p class="paragafo-projetos">Uma página interativa com roteiros de viagens mais cobiçados do mundo.
+                    </p>
+                </div>
             </div>
 
             <div class="projetos-card">
-                <img src="imagens/projeto3.png" alt="ponto turistico em roma">
-                <h3 class="info-projetos"> Coliseu Roma</h3>
-                <p class="paragafo-projetos">Coliseu de Roma foi construído no século I para entretenimento do povo
-                    romano, quais foram os espetáculos realizados e como ele se tornou um símbolo da cidade.</p>
+                <img src="imagens/projeto3.png" alt="ponto turistico em roma" class="projetos-imagens">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos"> Coliseu Roma</h3>
+                    <p class="paragafo-projetos">Coliseu de Roma foi construído no século I para entretenimento do povo
+                        romano, quais foram os espetáculos realizados e como ele se tornou um símbolo da cidade.</p>
+                </div>
             </div>
-        </div>
     </section>
 
     <section id="contato" class="contatos">
-        <h2 class="contatos-titulo">Contatos</h2>
-        <form class="formulario-contato" id="formulario">
+        <h2 class="contatos-titulo">Entre em contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
 
-            <div class="nome-form">
-                <input placeholder="Nome" class="campo-form">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
             </div>
             <div class="grupo-form">
-                <textarea class="text-form" placeholder="Digite sua mensagem"></textarea>
+                <textarea class="campo-form" placeholder="Digite sua mensagem" id="mensagem" rows="6"></textarea>
             </div>
-
+            <button type="submit" class="botao-form">Whatsaap</button>
         </form>
     </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById("nome");
+            const mensagem = document.getElementById("mensagem");
+            const telefone = '5515997573575'
+
+            const texto = `Olá, Me chamo ${nome}, ${mensagem}`
+            const msgformatada = encodeURIComponent(texto)
+
+            const url = `https://whatsa.me/${telefone}?text=${msgformatada}`
+
+            window.open(url, '_blank')
+
+        }
+
+
+    </script>
 </body>
 
 </html>
